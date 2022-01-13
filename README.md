@@ -4,4 +4,4 @@ This project is based on my learnings from the classes conducted by Android-Club
 
 #### Assignment-2 Screenshot :
 - login screen
-![](/screenshots/login_2.png =250x500)
+![](/screenshots/login_2.png | height=100)
