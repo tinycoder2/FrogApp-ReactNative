@@ -1,6 +1,6 @@
 # FrogApp-ReactNative
 
-This project is based on my learning from the classes conducted by Android-Club-VITC for its FFCS members.
+This project is based on my learning from the classes conducted by Android-Club-VITC for their FFCS members.
 
 #### Assignment-2 Screenshot :
 - login screen
