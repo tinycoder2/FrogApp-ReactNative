@@ -10,7 +10,9 @@ export default function App() {
     { title: 'For Luna', text: 'Groceries', amount: '$35', key: '2' },
     { title: 'For Peach', text: 'Pocket money', amount: '$20', key: '3' },
     { title: 'For Mario', text: 'Bday Gift', amount: '$50', key: '4' },
-    { title: 'For Me', text: 'Pay bill', amount: '$70', key: '5' }
+    { title: 'For Me', text: 'Pay bill', amount: '$70', key: '5' },
+    { title: 'For Mario', text: 'Bday Gift', amount: '$50', key: '6' },
+    { title: 'For Me', text: 'Pay bill', amount: '$70', key: '7' }
   ]);
 
 

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         marginTop: 16,
         borderRadius: 25,
         borderStyle: "dotted",
-        borderColor: "#267326",
+        borderColor: "#004d00",
         borderWidth: 5,
         flexDirection: 'row',
         alignItems: 'center',
