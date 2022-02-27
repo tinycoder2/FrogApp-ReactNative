@@ -20,7 +20,7 @@ export default function App() {
   const pressHandler = (key) =>
     Alert.alert(
       "Payment Confirmation",
-      "Are you sure you want to proceed with the payment?",
+      "Are you really sure you want to proceed with the payment?",
       [
         {
           text: "Cancel",
