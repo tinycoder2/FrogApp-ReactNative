@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, View, FlatList, ImageBackground, Alert, TouchableWithoutFeedback, Keyboard, ActivityIndicator } from 'react-native';
 import Header from './components/header';
 import TodoItem from './components/dataItem';
+import CountContextProvider from './context/countContextProvider';
+
+
 
 
 export default function App() {
@@ -41,6 +44,7 @@ export default function App() {
 
 
   return (
+
     <ImageBackground
       source={{ uri: 'https://i.pinimg.com/originals/1d/a7/4e/1da74e3bc2233833fe96916a43458d98.gif' }}
       style={{ width: '100%', height: '100%' }}>
@@ -49,10 +53,11 @@ export default function App() {
       }}>
 
         <View style={styles.container}>
+
           <Header />
 
           <View style={styles.content}>
-            <ActivityIndicator size="small" color="#267326" />
+
             <View style={styles.list}>
               <FlatList
                 data={data}
@@ -68,6 +73,7 @@ export default function App() {
         </View>
       </TouchableWithoutFeedback>
     </ImageBackground>
+
   );
 }
 
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   list: {
-    marginTop: 20,
+    // marginTop: 20,
     flex: 1,
   },
 

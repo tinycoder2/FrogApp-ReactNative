@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Alert, Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
+import { useCountContext } from '../context/countContextProvider';
 
 export default function Popup() {
     const [modalVisible, setModalVisible] = useState(false);
+    const countContext = useCountContext();
     return (
         <View style={styles.centeredView}>
             <Modal
@@ -17,24 +19,28 @@ export default function Popup() {
                     <View style={styles.modalView}>
                         <Image source={require('../imgs/icons8-cash-50.png')} />
                         <Text style={styles.modalTitle}>Welcome to froggo wallet!</Text>
-                        <Text style={styles.modalText}>Your current balance is $500.</Text>
+                        <Text style={styles.modalText}>Your current balance is $ {countContext.count}</Text>
 
                         <Pressable
                             style={[styles.button]}
-                            onPress={() => setModalVisible(!modalVisible)}
+                            onPress={() => {
+                                setModalVisible(!modalVisible);
+                                countContext.setCount(countContext.count + 1);
+                            }
+                            }
                         >
                             <Text style={styles.textStyle}>Okay!</Text>
                         </Pressable>
                     </View>
                 </View>
-            </Modal>
+            </Modal >
             <Pressable
                 style={styles.image}
                 onPress={() => setModalVisible(true)}
             >
                 <Image source={require('../imgs/forg.png')} />
             </Pressable>
-        </View>
+        </View >
     );
 };
 

@@ -1,13 +1,15 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import Popup from './aboutPopUp';
+import CountContextProvider from '../context/countContextProvider';
 
 export default function Header() {
 
     return (
         <View style={styles.header}>
-            <Popup />
-
+            <CountContextProvider>
+                <Popup />
+            </CountContextProvider>
             <Text style={styles.title}>Froggo Wallet</Text>
 
 
