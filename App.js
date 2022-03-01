@@ -3,11 +3,11 @@ import { StyleSheet, View, FlatList, ImageBackground, Alert, TouchableWithoutFee
 import Header from './components/header';
 import TodoItem from './components/dataItem';
 import CountContextProvider from './context/countContextProvider';
-
-
+import { useCountContext } from './context/countContextProvider';
 
 
 export default function App() {
+  const countContext = useCountContext();
   const [data, setData] = useState([
     { title: 'For Pimbu', text: 'Buy coffee', amount: '$10', key: '1' },
     { title: 'For Luna', text: 'Groceries', amount: '$35', key: '2' },
@@ -17,8 +17,6 @@ export default function App() {
     { title: 'For Mario', text: 'Bday Gift', amount: '$50', key: '6' },
     { title: 'For Me', text: 'Pay bill', amount: '$70', key: '7' }
   ]);
-
-
 
   const pressHandler = (key) =>
     Alert.alert(
@@ -32,9 +30,12 @@ export default function App() {
         },
         {
           text: "Confirm Payment", onPress: () => {
-            setData(prevdata => {
-              return prevdata.filter(todo => todo.key != key);
-            });
+            countContext.setCount(countContext.count - todo.amount);
+            // setData(prevdata => {
+            //   return prevdata.filter(todo => todo.key != key);
+            // });
+
+
           }
         }
 
@@ -62,7 +63,9 @@ export default function App() {
               <FlatList
                 data={data}
                 renderItem={({ item }) => (
-                  <TodoItem item={item} pressHandler={pressHandler} />
+                  <CountContextProvider>
+                    <TodoItem item={item} pressHandler={pressHandler} />
+                  </CountContextProvider>
                 )}
               />
             </View>

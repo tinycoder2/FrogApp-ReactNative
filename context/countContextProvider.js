@@ -3,7 +3,7 @@ import React, { createContext, useContext } from 'react';
 const countContext = createContext();
 
 export default function CountContextProvider({ children }) {
-    const [count, setCount] = React.useState(0);
+    const [count, setCount] = React.useState(1000);
 
     return (
         <countContext.Provider value={{ count, setCount }}>
