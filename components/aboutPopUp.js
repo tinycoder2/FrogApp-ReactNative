@@ -1,10 +1,14 @@
-import React, { useState } from "react";
-import { Alert, Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
-import { useCountContext } from '../context/countContextProvider';
+import React, { useState, useEffect, useContext } from "react";
+import { Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
+import { CountContext, useCountContext } from '../context/countContextProvider';
 
 export default function Popup() {
     const [modalVisible, setModalVisible] = useState(false);
-    const countContext = useCountContext();
+    // const countContext = useCountContext();
+    const countContext = useContext(CountContext);
+    // useEffect(() => {
+
+    // }, [CountContext.count]);
     return (
         <View style={styles.centeredView}>
             <Modal
@@ -25,7 +29,8 @@ export default function Popup() {
                             style={[styles.button]}
                             onPress={() => {
                                 setModalVisible(!modalVisible);
-                                countContext.setCount(countContext.count + 1);
+                                console.log("modal", countContext.count);
+                                // countContext.setCount(countContext.count + 1);
                             }
                             }
                         >

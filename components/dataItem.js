@@ -5,7 +5,7 @@ export default function TodoItem({ pressHandler, item }) {
     return (
         <TouchableOpacity onPress={() => pressHandler(item.key)}>
             <View style={styles.item}>
-                <Text style={styles.itemValue}>{item.amount}</Text>
+                <Text style={styles.itemValue}>${item.amount}</Text>
                 <Image source={require('../imgs/icons8-coins-40.png')} />
                 <Text style={styles.itemTitle}>{item.title}</Text>
                 <Text style={styles.itemText}>{item.text}</Text>

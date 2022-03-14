@@ -1,14 +1,14 @@
 import React, { createContext, useContext } from 'react';
 
-const countContext = createContext();
+export const CountContext = createContext();
 
 export default function CountContextProvider({ children }) {
-    const [count, setCount] = React.useState(1000);
+    const [count, setCount] = React.useState(10000);
 
     return (
-        <countContext.Provider value={{ count, setCount }}>
+        <CountContext.Provider value={{ count, setCount }}>
             {children}
-        </countContext.Provider>
+        </CountContext.Provider>
     );
 }
 
