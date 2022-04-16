@@ -122,7 +122,7 @@ const styles = StyleSheet.create({
   byline: {
     padding: 4,
     color: "#fff",
-    textAlign: "justify",
+    textAlign: "center",
     fontStyle: "italic"
   }
 });
